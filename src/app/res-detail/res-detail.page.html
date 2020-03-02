@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+  	<ion-buttons slot="start" (click)="goBack()">
+      <ion-icon slot="start" name="arrow-back"></ion-icon>
+    </ion-buttons>
+    <ion-title>Reservation Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="welcome-card" *ngFor="let item of detail_data">
+  	<img src="./assets/grd.jpeg">
+    <ion-card-content>
+      <ion-card-subtitle class="reservation_name">Type: <b>{{item.type}}</b></ion-card-subtitle>
+      <ion-card-subtitle class="reservation_name">Match: <b>{{item.match}}</b></ion-card-subtitle>
+      <ion-card-subtitle class="reservation_name">Date: <b>{{item.date}}</b></ion-card-subtitle>
+      <ion-card-subtitle class="reservation_name">
+        <ion-button color="secondary" size="small" (click)="sendNotification()">Book Now</ion-button>
+      </ion-card-subtitle>
+    </ion-card-content>
+  </ion-card>
+  <div id="container"></div>
+</ion-content>

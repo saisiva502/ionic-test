@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "111180759026",
+    "firebase_url": "https://androidtest-bf076.firebaseio.com",
+    "project_id": "androidtest-bf076",
+    "storage_bucket": "androidtest-bf076.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:111180759026:android:e85e38d57206fb7e57756b",
+        "android_client_info": {
+          "package_name": "io.ionic.ionic4GoogleLogin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "111180759026-nnb3pda9iahv02tmsuv5b3h4ijiclokb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhDK6cSdHEvo89tiReiKvkNjc3QQ1n8uw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "111180759026-nnb3pda9iahv02tmsuv5b3h4ijiclokb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

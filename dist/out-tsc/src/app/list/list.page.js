@@ -1,0 +1,38 @@
+import { __decorate, __metadata } from "tslib";
+import { Component } from '@angular/core';
+let ListPage = class ListPage {
+    constructor() {
+        this.icons = [
+            'flask',
+            'wifi',
+            'beer',
+            'football',
+            'basketball',
+            'paper-plane',
+            'american-football',
+            'boat',
+            'bluetooth',
+            'build'
+        ];
+        this.items = [];
+        for (let i = 1; i < 11; i++) {
+            this.items.push({
+                title: 'Item ' + i,
+                note: 'This is item #' + i,
+                icon: this.icons[Math.floor(Math.random() * this.icons.length)]
+            });
+        }
+    }
+    ngOnInit() {
+    }
+};
+ListPage = __decorate([
+    Component({
+        selector: 'app-list',
+        templateUrl: 'list.page.html',
+        styleUrls: ['list.page.scss']
+    }),
+    __metadata("design:paramtypes", [])
+], ListPage);
+export { ListPage };
+//# sourceMappingURL=list.page.js.map

@@ -1,0 +1,43 @@
+<ion-content class="vertical-align-content">
+  <ion-card class="welcome-card">
+    <img src="/assets/shapes.svg" alt=""/>
+    <ion-card-header>
+      <ion-card-title>LogIN</ion-card-title>
+    </ion-card-header>
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Username</ion-label>
+          <ion-input type="text" formControlName="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }"></ion-input>
+        </ion-item>
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback error_msg">
+          <ion-text *ngIf="f.username.errors.required" color="danger">Email is required</ion-text>
+        </div>
+        <ion-item>
+          <ion-label position="floating">password</ion-label>
+          <ion-input type="password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"></ion-input>
+        </ion-item>
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback error_msg">
+          <ion-text *ngIf="f.password.errors.required" color="danger">Password is required</ion-text>
+        </div>
+      </ion-card-content>
+      <ion-card-content>
+        <ion-button type="submit" color="success" expand="block">Login</ion-button>
+      </ion-card-content>
+    </form>
+    <ion-card-content>
+        <ion-button color="primary" expand="block" (click)="fbLogin()">Facebook Login</ion-button>
+    </ion-card-content>
+    <div *ngIf="login_true">
+      <p>{{data}}</p>
+      <p>{{userData}}</p>
+    </div>
+    <!-- <ion-card-content>
+        <ion-button color="secondary" expand="block" (click)="twitterLogin()">Login with Pinterest</ion-button>
+    </ion-card-content>
+    <div *ngIf="error">
+      <p>from ERROR</p>
+      <p>{{err_data}}</p>
+    </div> -->
+  </ion-card>
+</ion-content>

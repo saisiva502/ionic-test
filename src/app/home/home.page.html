@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-slides [options]="sliderConfig">
+    <ion-slide *ngFor="let item of carousel_imgs">
+      <ion-img src="{{item}}"></ion-img>
+    </ion-slide>
+  </ion-slides>
+  <app-home-list></app-home-list>
+</ion-content>
+
+<!-- <ion-content>
+  <ion-card class="welcome-card" *ngFor="let item of employees_data">
+    <ion-card-header>
+    <ion-badge color="tertiary">User</ion-badge>
+      <ion-card-title>
+        <ion-list lines="none">
+          <ion-item line="none">
+          <ion-icon name="person" slot="start"></ion-icon>
+            {{item.name}}
+          </ion-item>
+        </ion-list>
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list lines="none">
+        <ion-item>
+        <ion-icon name="mail" slot="start"></ion-icon>
+          {{item.email}}
+        </ion-item>
+        <ion-button class="ion-float-right" color="secondary">View</ion-button>
+      </ion-list>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content> -->

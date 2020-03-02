@@ -1,0 +1,7 @@
+{
+  "name": "test_task",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

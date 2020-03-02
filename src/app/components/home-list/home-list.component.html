@@ -1,0 +1,61 @@
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title><ion-badge color="tertiary">Future reservations</ion-badge></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="size-lg" size="6" *ngFor="let item of future_reservations; let i=index">
+            <ion-card class="home_data" (click)="getFutureRes(item)">
+              <img src="./assets/grd.jpeg">
+              <ion-card-content>
+                <ion-card-subtitle class="reservation_name">Type: <b>{{item.type}}</b></ion-card-subtitle>
+                <ion-card-subtitle class="reservation_name">Match: <b>{{item.match}}</b></ion-card-subtitle>
+                <ion-card-subtitle class="reservation_name">Date: <b>{{item.date}}</b></ion-card-subtitle>
+                <ion-card-subtitle class="reservation_name">
+                  <ion-button color="secondary" size="small" (click)="getFutureRes(item)">View</ion-button>
+                </ion-card-subtitle>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button class="ion-float-right" color="warning" size="small" (click)="onFutureAllRes()">View All</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title><ion-badge color="tertiary">Past reservations</ion-badge></ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col class="size-lg" size="6" *ngFor="let item of future_reservations; let i=index">
+            <ion-card *ngIf="i<2">
+              <img src="./assets/grd.jpeg">
+              <ion-card-content>
+                <ion-card-subtitle class="reservation_name">Type: <b>{{item.type}}</b></ion-card-subtitle>
+                <ion-card-subtitle class="reservation_name">Match: <b>{{item.match}}</b></ion-card-subtitle>
+                <ion-card-subtitle class="reservation_name">Date: <b>{{item.date}}</b></ion-card-subtitle>
+                <ion-card-subtitle class="reservation_name">
+                  <ion-button color="secondary" size="small">View</ion-button>
+                </ion-card-subtitle>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button class="ion-float-right" color="warning" size="small">View All</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <div id="current_location">
+    
+  </div>

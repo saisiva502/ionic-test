@@ -1,0 +1,56 @@
+<ion-header class="network_bg_err" *ngIf="!data_connection">
+  Network Disconnected
+</ion-header>
+<ion-header class="network_bg_success" *ngIf="data_re_connection">
+  We are back....
+</ion-header>
+
+
+<ion-app>
+  <ion-split-pane contentId="main-content">
+    <ion-menu contentId="main-content" type="overlay">
+      <ion-header>
+        <ion-toolbar>
+          <ion-item *ngIf="login_true">
+            <ion-avatar slot="start" (click)="changeProfile()">
+              <img src="{{data.picture}}">
+            </ion-avatar>
+            <ion-avatar slot="start" *ngIf="custom">
+              <img src="{{custom_image}}">
+            </ion-avatar>
+            <ion-label>{{data.user_name}}</ion-label>
+          </ion-item>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content>
+        <ion-list>
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
+            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+              <ion-icon slot="start" [name]="p.icon"></ion-icon>
+              <ion-label>
+                {{p.title}}
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle>
+            <ion-item>
+             <ion-icon slot="start" name="analytics"></ion-icon>
+              <ion-label>
+                Charts
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          <ion-menu-toggle>
+            <ion-item (click)="onLogout()">
+             <ion-icon slot="start" name="person"></ion-icon>
+              <ion-label>
+                Logout
+              </ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+  </ion-split-pane>
+</ion-app>

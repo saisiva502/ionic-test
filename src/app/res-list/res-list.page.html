@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+  	<ion-buttons slot="start" (click)="goBack()">
+      <ion-icon slot="start" name="arrow-back"></ion-icon>
+    </ion-buttons>
+    <ion-title>Reservation List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-item (click)="getFromDatePicker()">From: {{from_date}} <ion-icon slot="end" name="calendar"></ion-icon></ion-item>
+<ion-item (click)="getToDatePicker()">To: {{to_date}} <ion-icon slot="end" name="calendar"></ion-icon></ion-item>
+
+<ion-row>
+  <ion-col>
+    <ion-button color="secondary" (click)="clearFilter()"> Clear Filter</ion-button>
+  </ion-col>
+  <ion-col>
+    <ion-button color="success" (click)="applyFilter()"> Apply Filter</ion-button>
+  </ion-col>
+</ion-row>
+
+<ion-content>
+	<ion-list>
+    <ion-reorder-group (ionItemReorder)="doReorder($event)" disabled="false">
+  	  <ion-item *ngFor="let item of list_data" (click)="getFutureRes(item)">
+        <ion-reorder>
+          <ion-item>
+      	    <ion-avatar slot="start">
+      	      <img src="./assets/grd.jpeg">
+      	    </ion-avatar>
+      	    <ion-label>
+      	      <h2>{{item.type}}</h2>
+      	      <h3>{{item.match}}</h3>
+      	      <p>{{item.date}}</p>
+      	    </ion-label>
+      	    <ion-button color="tertiary" size="small" (click)="getFutureRes(item)">View</ion-button>
+          </ion-item>
+        </ion-reorder>
+  	  </ion-item>
+    </ion-reorder-group>
+  </ion-list>
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
+
